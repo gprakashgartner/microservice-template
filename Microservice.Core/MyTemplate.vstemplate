@@ -1,0 +1,38 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Microservice.Core</Name>
+    <Description>This is the project where the core business logic resides.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Microservice.Core</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.Core.csproj" File="Microservice.Core.csproj" ReplaceParameters="true">
+      <Folder Name="Contexts" TargetFolderName="Contexts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DomainContext.cs">DomainContext.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DomainReadUncommittedContext.cs">DomainReadUncommittedContext.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Contracts" TargetFolderName="Contracts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IDaemonService.cs">IDaemonService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="I$projectname$Service.cs">IMicroserviceService.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models">
+        <Folder Name="Config" TargetFolderName="Config">
+          <ProjectItem ReplaceParameters="true" TargetFileName="DatabaseConfig.cs">DatabaseConfig.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$Config.cs">MicroserviceConfig.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$Service.cs">MicroserviceService.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
